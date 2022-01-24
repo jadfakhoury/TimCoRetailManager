@@ -18,29 +18,35 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 0 0 20"
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 0 0 10"
                    HorizontalAlignment="Center" FontSize="64" FontFamily="Segoe UI Light">
             Login Form
         </TextBlock>
+        <!-- Error Message Row-->
+        <TextBlock x:Name="ErrorMessage" TextAlignment="Center"  
+                   Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                   Margin="0 0 0 5" MinHeight="30" Grid.Row="1" Grid.Column="1" 
+                   Grid.ColumnSpan="2" Foreground="red" MaxWidth="350" TextWrapping="Wrap"/>
         
         <!-- Username Row-->
-        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0 0 0 10">
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 0 15 10">
             Username:
         </TextBlock>
-        <TextBox x:Name="UserName" Grid.Row="1" Grid.Column="2" Width="250"
+        <TextBox x:Name="UserName" Grid.Row="2" Grid.Column="2" Width="250"
                  Margin="0 0 0 10" />
 
         <!-- Password Row-->
-        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 0 0 10">
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0 0 15 10">
             Password:
         </TextBlock>
-        <PasswordBox x:Name="Password" Grid.Row="2" Grid.Column="2" Width="250"
+        <PasswordBox x:Name="Password" Grid.Row="3" Grid.Column="2" Width="250"
                  Margin="0 0 0 20" />
 
         <!-- Login Row-->
-        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                 HorizontalAlignment="Center" x:Name="LogIn" Padding="30 3">
             Login
         </Button>
